@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "799682286769",
+    "project_id": "campustour-320306",
+    "storage_bucket": "campustour-320306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799682286769:android:6e25884d0ef2975f04be90",
+        "android_client_info": {
+          "package_name": "com.example.campustour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799682286769-lhi38ofam2fh37ivtphcnq5l5o5odn10.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.campustour",
+            "certificate_hash": "2c9f350777c8b6cf2da9f13d1154db12c00f66b4"
+          }
+        },
+        {
+          "client_id": "799682286769-fr9tb40i417cefgauv6gra7hu18i1fd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI9Ks5mGHkMK14_JK0evWd0mLVnUnZQ04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799682286769-fr9tb40i417cefgauv6gra7hu18i1fd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
