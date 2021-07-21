@@ -79,8 +79,10 @@ public class MainActivity extends FragmentActivity
 
     public void showMarker(View view) {
 
-        // DB에서 얻은 값 파싱하여
-
+        //맵 초기화
+        mMap.clear();
+        
+        //각 버튼별 타이틀값 할당
         String title;
 
         switch (view.getId()) {
@@ -102,7 +104,8 @@ public class MainActivity extends FragmentActivity
             default:
                 title = "";
         }
-
+        
+        //DB에서 값 파싱 후 마커 추가
         db.collection("marker")
                 .whereEqualTo("title", title)
                 .get()

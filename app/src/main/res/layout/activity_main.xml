@@ -42,7 +42,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/btn2" />
+                android:text="@string/btn2"
+                android:onClick="showMarker"/>
 
             <Button
                 android:id="@+id/btn3"
@@ -50,7 +51,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/btn3" />
+                android:text="@string/btn3"
+                android:onClick="showMarker"/>
 
             <Button
                 android:id="@+id/btn4"
@@ -58,7 +60,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/btn4" />
+                android:text="@string/btn4"
+                android:onClick="showMarker"/>
 
             <Button
                 android:id="@+id/btn5"
@@ -66,7 +69,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/btn5" />
+                android:text="@string/btn5"
+                android:onClick="showMarker"/>
         </LinearLayout>
 
     </HorizontalScrollView>
