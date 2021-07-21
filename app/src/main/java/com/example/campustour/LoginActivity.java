@@ -18,8 +18,8 @@ public class LoginActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"로그인하세요", Toast.LENGTH_LONG).show();
-                Intent signup_page = new Intent(LoginActivity.this,SignupActivity.class);
+//                Toast.makeText(getApplicationContext(),"로그인하세요", Toast.LENGTH_LONG).show();
+                Intent signup_page = new Intent(LoginActivity.this, SignupActivity.class);
 
                 startActivity(signup_page);
                 finish();
