@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">CampusTour</string>
     <string name="btn">편의점</string>
-    <string name="btn2">카페</string>
-    <string name="btn3">ATM</string>
+    <string name="btn2">식당</string>
+    <string name="btn3">카페</string>
     <string name="btn4">프린터기</string>
-    <string name="btn5">화장실</string>
+    <string name="btn5">ATM기</string>
+    <string name="mypage">mypage</string>
 </resources>

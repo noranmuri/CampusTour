@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,8 +12,9 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        tools:context=".MainActivity"></androidx.fragment.app.FragmentContainerView>
+        tools:context=".MainActivity">
+
+    </androidx.fragment.app.FragmentContainerView>
 
     <HorizontalScrollView
         android:layout_width="wrap_content"
@@ -26,16 +28,16 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:text="@string/btn"
-                android:onClick="showBtn"/>
+                android:onClick="showMarker"/>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -43,7 +45,7 @@
                 android:text="@string/btn2" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -51,7 +53,7 @@
                 android:text="@string/btn3" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btn4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -59,7 +61,7 @@
                 android:text="@string/btn4" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btn5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -68,4 +70,17 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="9dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/mypage"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mypage" />
+
 </FrameLayout>

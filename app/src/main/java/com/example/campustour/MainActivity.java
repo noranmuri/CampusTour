@@ -11,11 +11,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -78,10 +76,16 @@ public class MainActivity extends FragmentActivity
     public void onMyLocationClick(@NonNull Location location) {
     }
 
-    public void showBtn(View view) {
+    public void showMarker(View view) {
 
         // DB에서 얻은 값 파싱하여
-
+//        String title;
+//
+//        switch (view.getId()) {
+//            case R.id.btn:
+//                title = "편의점";
+//                break;
+//        }
         db.collection("marker")
                 .whereEqualTo("title", "편의점")
                 .get()
