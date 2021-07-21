@@ -1,8 +1,5 @@
 package com.example.campustour;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -44,9 +43,7 @@ public class SignupActivity extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.join_phone);
         button = (Button) findViewById(R.id.join_button);
 
-        user = new User(name.toString() ,
-               id.toString() ,pw.toString(),
-                pwcheck.toString(), phone.toString());
+
         same = (TextView)findViewById(R.id.join_pwsame);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +52,9 @@ public class SignupActivity extends AppCompatActivity {
                 if (!id.getText().toString().equals("") && !name.getText().toString().equals("") &&
                         !pw.getText().toString().equals("") && !pwcheck.getText().toString().equals("") &&
                         !phone.getText().toString().equals("")) {
+                    user = new User(name.getText().toString() ,
+                            id.getText().toString() ,pw.getText().toString(),
+                            pwcheck.getText().toString(), phone.getText().toString());
                     // 빈칸이 없는 경우
                     if (pw.getText().toString().equals(pwcheck.getText().toString())) {
                         same.setText("비밀번호 일치");
@@ -77,21 +77,13 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                        button.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
+
                                 Toast.makeText(getApplicationContext(),"회원가입 되었습니다", Toast.LENGTH_LONG).show();
                                 Intent login_page = new Intent(SignupActivity.this, LoginActivity.class);
 
                                 startActivity(login_page);
                                 finish();
-                            }
-
-                        });
                     }
-
-
-
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -108,6 +100,8 @@ public class SignupActivity extends AppCompatActivity {
         private String pw;
         private String pwcheck;
         private String phone;
+        private String level;
+        private int coin;
 
         public User() {
         }
@@ -118,6 +112,8 @@ public class SignupActivity extends AppCompatActivity {
             this.pw = pw;
             this.pwcheck = pwcheck;
             this.phone = phone;
+            this.level = null;
+            this.coin = -1;
         }
 
         public String getName() {
