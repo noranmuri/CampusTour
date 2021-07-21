@@ -23,7 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".FootBtnClickedActivity"/>
+        <activity android:name=".QuestBtnClickedActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -1,6 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<?xml version="1.0" encoding="UTF-8"?>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout
+    tools:context=".MyPageActivity"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 기본적인 개인정보 표시 -->
+
+
+    <TextView
+        android:id="@+id/MyPageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="마이페이지"
+        android:textColor="@color/black"
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="168dp"
+        android:layout_width="match_parent"
+        android:id="@+id/menuLayout">
+
+        <!-- 텍스트 기반 정보 -->
+
+
+        <ImageView
+            android:layout_width="110sp"
+            android:layout_height="110sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:src="@drawable/img"
+            />
+
+        <LinearLayout
+            android:layout_width="208dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/UserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="30sp"
+                android:text="고앵이"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TitleOfLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="30sp"
+                android:text="내 등급"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/UserLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:text="뚜벅이"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<ListViewandroid:id="@+id/listView"android:layout_width="match_parent"android:layout_height="120dp"android:layout_marginTop="0dp"android:layout_marginLeft="10dp"></ListView> -->
+
+
+    <Button
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:text="나의 발자취"
+        android:id="@+id/button_foot"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:text="퀘스트 리스트"
+        android:id="@+id/button_quest"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="314dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="톰과 제리쓰리"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+</LinearLayout>
