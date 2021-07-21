@@ -19,6 +19,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -79,15 +80,31 @@ public class MainActivity extends FragmentActivity
     public void showMarker(View view) {
 
         // DB에서 얻은 값 파싱하여
-//        String title;
-//
-//        switch (view.getId()) {
-//            case R.id.btn:
-//                title = "편의점";
-//                break;
-//        }
+
+        String title;
+
+        switch (view.getId()) {
+            case R.id.btn:
+                title = "편의점";
+                break;
+            case R.id.btn2:
+                title = "식당";
+                break;
+            case R.id.btn3:
+                title = "카페";
+                break;
+            case R.id.btn4:
+                title = "프린터기";
+                break;
+            case R.id.btn5:
+                title = "ATM기";
+                break;
+            default:
+                title = "";
+        }
+
         db.collection("marker")
-                .whereEqualTo("title", "편의점")
+                .whereEqualTo("title", title)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -97,7 +114,7 @@ public class MainActivity extends FragmentActivity
                                 Log.d("DB", document.getId() + " => " + document.getData());
 
                                 final MarkerOptions marker = new MarkerOptions()
-                                        .position(new LatLng((double)document.get("latitude"), (double)document.get("longitude")))
+                                        .position(new LatLng(document.getGeoPoint("location").getLatitude(), document.getGeoPoint("location").getLongitude()))
                                         .title((String) document.get("title"));
 //                                        .snippet(document.get("snippet"))
 
