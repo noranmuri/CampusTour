@@ -13,14 +13,14 @@
         android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="50sp"
-        android:text="나의 발자취"
+        android:text="퀘스트"
         android:textSize="30sp"
         android:textColor="@color/black"
         android:gravity="center"
         />
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/questView"
         android:layout_width="match_parent"
         android:layout_height="646dp" >
 
