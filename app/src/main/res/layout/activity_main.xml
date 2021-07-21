@@ -99,8 +99,8 @@
 
     <ImageButton
         android:id="@+id/mypage"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
         android:layout_gravity="start"
         android:layout_marginStart="10dp"
         android:layout_marginTop="70dp"

@@ -26,7 +26,7 @@ public class FootBtnClickedActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
-    class SingerAdapter extends BaseAdapter {
+    public class SingerAdapter extends BaseAdapter {
         ArrayList<SingerItem> items = new ArrayList<SingerItem>();
 
         @Override

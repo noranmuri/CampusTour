@@ -8,19 +8,20 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
-class QuestBtnClickedActivity extends AppCompatActivity {
+public class QuestBtnClickedActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mission);
+        setContentView(R.layout.activity_mission_list);
 
-        ListView listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.questView);
         SingerAdapter adapter = new SingerAdapter();
-        adapter.addItem(new SingerItem("IT4호관","2021-01-01",R.drawable.paw));
-        adapter.addItem(new SingerItem("IT융복합관","2021-02-02",R.drawable.paw));
+        adapter.addItem(new SingerItem("IT대학 건물 다 가보기","2021-01-01",R.drawable.complete1));
+        adapter.addItem(new SingerItem("동문 개나리 보러 가기"," ",R.drawable.bcomplete1));
 
         listView.setAdapter(adapter);
     }
