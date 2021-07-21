@@ -3,7 +3,9 @@
     <string name="btn">편의점</string>
     <string name="btn2">식당</string>
     <string name="btn3">카페</string>
-    <string name="btn4">프린터기</string>
-    <string name="btn5">ATM기</string>
+    <string name="btn4">프린터</string>
+    <string name="btn5">ATM</string>
+    <string name="btn6">자판기</string>
     <string name="mypage">mypage</string>
+    <string name="mission">mission</string>
 </resources>

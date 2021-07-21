@@ -39,7 +39,6 @@
             android:background="@color/white">
 
             <EditText
-                android:id="@+id/idbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -49,7 +48,6 @@
                 android:textSize="15sp"/>
 
             <EditText
-                android:id="@+id/pwbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
