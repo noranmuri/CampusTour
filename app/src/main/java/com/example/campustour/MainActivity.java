@@ -96,10 +96,13 @@ public class MainActivity extends FragmentActivity
                 title = "카페";
                 break;
             case R.id.btn4:
-                title = "프린터기";
+                title = "프린터";
                 break;
             case R.id.btn5:
-                title = "ATM기";
+                title = "ATM";
+                break;
+            case R.id.btn6:
+                title = "자판기";
                 break;
             default:
                 title = "";
@@ -135,24 +138,3 @@ public class MainActivity extends FragmentActivity
                 });
     }
 }
-
-//    public void onSuccess(@Nullable String data) {
-//        Log.d("onSuccess", data + "얻은 값");
-//
-//        // DB에서 얻은 값 파싱하여
-//
-//        for (int i = 0; i < mapDataItems.length; i++) {
-//            final MarkerOptions marker = new MarkerOptions()
-//                    .position(new LatLng(mapDataItems[i].getPLACE_COORD_X(), mapDataItems[i].getPLACE_COORD_Y()))
-//                    .title(mapDataItems[i].getPLACE_TITLE())
-//                    .snippet(mapDataItems[i].getPLACE_ADDRESS())
-//                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
-//
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    mGoogleMap.addMarker(marker);
-//                }
-//            });
-//        }
-//    }
