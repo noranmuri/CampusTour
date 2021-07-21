@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SignupActivity">
 
     <LinearLayout
         android:layout_width="387dp"
@@ -29,7 +29,7 @@
                 android:textSize="55px" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/join_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_text"
@@ -58,7 +58,8 @@
                     android:textSize="55px" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+
+                    android:id="@+id/join_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_text"
@@ -98,7 +99,7 @@
                     android:textSize="55px" />
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/join_pw"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_text"
@@ -108,7 +109,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView3"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="비밀번호"
@@ -136,7 +137,7 @@
                 android:textSize="55px" />
 
             <EditText
-                android:id="@+id/editTextTextPassword2"
+                android:id="@+id/join_pwcheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_text"
@@ -145,10 +146,10 @@
                 android:inputType="textPassword" />
 
             <TextView
-                android:id="@+id/pwcheck"
+                android:id="@+id/join_pwsame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="비밀번호 일치" />
+                android:text="" />
         </LinearLayout>
 
         <LinearLayout
@@ -165,7 +166,7 @@
                 android:textSize="55px" />
 
             <EditText
-                android:id="@+id/editTextPhone2"
+                android:id="@+id/join_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_text"
@@ -182,7 +183,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/join_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="sign up"

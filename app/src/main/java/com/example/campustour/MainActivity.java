@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -47,7 +48,7 @@ public class MainActivity extends FragmentActivity
 
         mMap = googleMap;
 
-        //권한없으면 부여
+        //위치 권한없으면 부여
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[] {
@@ -58,14 +59,10 @@ public class MainActivity extends FragmentActivity
         mMap.setOnMyLocationButtonClickListener(this);
         mMap.setOnMyLocationClickListener(this);
 
-//        LatLng KNU = new LatLng(35.88998331973934, 128.6114154965834);
-//
-//        MarkerOptions markerOptions = new MarkerOptions();
-//        markerOptions.position(KNU);
-//        markerOptions.title("경북대학교");
-//        markerOptions.snippet("대구캠퍼스");
-//        mMap.addMarker(markerOptions);
-//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(KNU, 16));
+        //초기 위치 설정
+        LatLng KNU = new LatLng(35.88998331973934, 128.6114154965834);
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(KNU, 16));
     }
 
     @Override
