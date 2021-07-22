@@ -41,22 +41,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 public class MissionActivity extends AppCompatActivity implements
         OnMapReadyCallback,
@@ -162,7 +156,9 @@ public class MissionActivity extends AppCompatActivity implements
                                                 //기존 정보 가져오기
                                                 List<String> foot = (List<String>)document.get("foot");
                                                 List<String> mission = (List<String>)document.get("mission");
-                                                int old_coin = (int)document.get("coin");
+                                                Long old_coin;
+                                                old_coin = document.getLong("coin");
+
 
                                                 foot.add(m_id, date_format);
                                                 mission.add(m_id, date_format);
