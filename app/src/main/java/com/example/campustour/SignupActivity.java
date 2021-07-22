@@ -148,8 +148,8 @@ public class SignupActivity extends AppCompatActivity {
                     newUser.put("phone",phone.getText().toString());
                     newUser.put("level","1학년");
                     newUser.put("coin",0);
-                    newUser.put("mission",new ArrayList<String>());
-                    newUser.put("foot",new ArrayList<String>());
+                    newUser.put("mission",new ArrayList<String>(10));
+                    newUser.put("foot",new ArrayList<String>(10));
 //                    user = new User(name.getText().toString() ,
 //                            id.getText().toString() ,pw.getText().toString(),
 //                            pwcheck.getText().toString(), phone.getText().toString());
