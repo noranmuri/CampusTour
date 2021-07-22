@@ -2,11 +2,13 @@ package com.example.campustour;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,7 +47,6 @@ public class MissionListActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 missions.add(document.getString("title").toString());
                             }
-                            listView.setAdapter(adapter);
                         }
                     }
                 });
@@ -59,12 +60,14 @@ public class MissionListActivity extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 List<String> date = (List<String>)document.get("mission");
-                                for(String str:missions){
+                                for(String str: missions) {
                                     int index = missions.indexOf(str);
                                     if(date.get(index).equals("")) {
-                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.bcomplete1));
+                                        //미완료
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.bcomplete1, index));
                                     } else {
-                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.complete1));
+                                        //완료
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.complete1, index));
                                     }
                                 }
                             }
@@ -80,6 +83,8 @@ public class MissionListActivity extends AppCompatActivity {
                 SingerItem item = (SingerItem)adapter.getItem(i);
                 Intent intent = new Intent(getApplicationContext(), MissionActivity.class);
                 intent.putExtra("title", item.name);
+                intent.putExtra("u_id", userid);
+                intent.putExtra("m_id", item.id);
                 startActivity(intent);
             }
         });

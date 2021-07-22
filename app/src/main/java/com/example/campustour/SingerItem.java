@@ -4,13 +4,23 @@ public class SingerItem {
     String name;
     String mobile;
     int resld;
+    int id; //for mission
+
+    public SingerItem() {
+
+    }
 
     public SingerItem(String name, String mobile, int resld) {
         this.name = name;
         this.mobile = mobile;
         this.resld = resld;
     }
-
+    public SingerItem(String name, String mobile, int resld, int id) {
+        this.name = name;
+        this.mobile = mobile;
+        this.resld = resld;
+        this.id = id;
+    }
     public String getName() {
         return name;
     }

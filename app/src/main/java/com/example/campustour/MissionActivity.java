@@ -38,16 +38,25 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class MissionActivity extends AppCompatActivity implements
         OnMapReadyCallback,
@@ -123,10 +132,64 @@ public class MissionActivity extends AppCompatActivity implements
                     double y = Math.abs(currentPosition.longitude - target.longitude);
                     double z = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));  //미션장소와 현위치 간 거리
                     if (z <= 0.0004) {
-//                        Log.d(TAG, "MissionCheck : 미션 장소에 도달했습니다!");
                         Toast toast = Toast.makeText(getApplicationContext(), "미션장소에 도달했습니다!", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
                         toast.show();
+
+                        //유저랑 미션 정보 가져오기
+                        Intent intent = getIntent();
+                        String u_id = intent.getStringExtra("u_id");    //유저 아이디
+                        int m_id = intent.getIntExtra("m_id", -1);  //미션 아이디
+                        Log.d("확인", u_id+ " " + Integer.toString(m_id));
+
+                        //문서 아이디 찾기
+                        db.collection("users")
+                                .whereEqualTo("id", u_id)
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if(task.isSuccessful()) {
+                                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                                String d_id = document.getId();
+
+                                                //오늘 날짜 구하기
+                                                long now = System.currentTimeMillis();
+                                                Date date = new Date(now);
+                                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                                                String date_format = sdf.format(date);
+
+                                                //기존 정보 가져오기
+                                                List<String> foot = (List<String>)document.get("foot");
+                                                List<String> mission = (List<String>)document.get("mission");
+                                                int old_coin = (int)document.get("coin");
+
+                                                foot.add(m_id, date_format);
+                                                mission.add(m_id, date_format);
+
+                                                //미션완료 표시
+                                                DocumentReference ref = db.collection("users").document(d_id);
+                                                ref.update("foot", foot,
+                                                        "mission", mission,
+                                                        "coin", old_coin + 10)
+                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                            @Override
+                                                            public void onSuccess(Void aVoid) {
+                                                                Log.d(TAG, "DocumentSnapshot successfully updated!");
+                                                            }
+                                                        })
+                                                        .addOnFailureListener(new OnFailureListener() {
+                                                            @Override
+                                                            public void onFailure(@NonNull Exception e) {
+                                                                Log.w(TAG, "Error updating document", e);
+                                                            }
+                                                        });
+
+                                            }
+                                        }
+                                    }
+                                });
+
                     } else if (0.0004 <= z && z <= 0.0009) {
                         Toast toast = Toast.makeText(getApplicationContext(),"다와가네요~ 조금만 더!", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
@@ -454,7 +517,7 @@ public class MissionActivity extends AppCompatActivity implements
 
     @Override
     public boolean onMyLocationButtonClick() {
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 18));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 16));
         return false;
     }
 

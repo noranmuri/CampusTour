@@ -44,7 +44,6 @@ public class FootBtnClickedActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 foots.add(document.getString("title").toString());
                             }
-                            listView.setAdapter(adapter);
                         }
                     }
                 });
@@ -62,6 +61,7 @@ public class FootBtnClickedActivity extends AppCompatActivity {
                                     int index = foots.indexOf(str);
                                     if (date.get(index).equals("")) {
                                         adapter.addItem(new SingerItem(str, date.get(index), R.drawable.question));
+
                                     } else {
                                         adapter.addItem(new SingerItem(str, date.get(index), R.drawable.paw));
                                     }

@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements
         //초기 위치 설정
         LatLng KNU = new LatLng(35.88998331973934, 128.6114154965834);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(KNU, 16));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(KNU, 15));
     }
 
     @Override
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("DB", document.getId() + " => " + document.getData());
+//                                Log.d("DB", document.getId() + " => " + document.getData());
 
                                 final MarkerOptions marker = new MarkerOptions()
                                         .position(new LatLng(document.getGeoPoint("location").getLatitude(), document.getGeoPoint("location").getLongitude()))
