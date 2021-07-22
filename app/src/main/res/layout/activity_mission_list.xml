@@ -18,7 +18,8 @@
         android:text="미션리스트"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:fontFamily="@font/scdream8"/>
 
     <ListView
         android:id="@+id/questView"
