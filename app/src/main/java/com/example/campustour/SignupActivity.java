@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class SignupActivity extends AppCompatActivity {
@@ -47,12 +48,39 @@ public class SignupActivity extends AppCompatActivity {
         myAlertBuilder.setPositiveButton("Ok",new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog,int which){
                 // OK 버튼을 눌렸을 경우
-                Toast.makeText(getApplicationContext(),"Pressed OK",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"Pressed OK",
+//                        Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Alert를 생성해주고 보여주는 메소드(show를 선언해야 Alert가 생성됨)
+        if (!id.getText().toString().equals("")) { //
+            db.collection("users")
+                    .whereEqualTo("id", id.getText().toString())
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            boolean check = false;
+                            if (task.isSuccessful()) { //중복된게 있으면 successful
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    // 아이디 같은 계정이 있으면 돌아가!
+                                    error = myAlertBuilder.create();
+                                    error.show();
+                                    check = true;
+                                    break;
+                                }
+                                if (check == false) {
+                                    Toast.makeText(SignupActivity.this, "사용가능한 아이디 입니다.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    });
+        }
+        else { //아이디 미입력하고 버튼 누르
+            Toast.makeText(SignupActivity.this, "아이디를 입력하세요.", Toast.LENGTH_LONG).show();
+        }
+
+
 
     }
     @Override
@@ -70,33 +98,37 @@ public class SignupActivity extends AppCompatActivity {
 
 
         same = (TextView)findViewById(R.id.join_pwsame);
-        copycheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                db.collection("users")
-                        .whereEqualTo("id", id.getText().toString())
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()) { //중복된게 있으면 successful
-//                                    for (QueryDocumentSnapshot document : task.getResult()) {
-//                                        if (document.getString("id").toString().equals(id.getText().toString()) ) {
-//                                            // 아이디 같은 계정이 있으면 돌아가!
-                                               error = myAlertBuilder.create();
-                                                error.show();
+//        copycheck.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!id.getText().toString().equals("")) { //
+//                    db.collection("users")
+//                            .whereEqualTo("id", id.getText().toString())
+//                            .get()
+//                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                                    if (task.isSuccessful()) { //중복된게 있으면 successful
+//                                        for (QueryDocumentSnapshot document : task.getResult()) {
+////                                            if (document.getString("id").toString().equals(id.getText().toString())) {
+//                                                // 아이디 같은 계정이 있으면 돌아가!
+//                                                error = myAlertBuilder.create();
+//                                                error.show();
 //                                                break;
-//                                            }
-//
+////                                            }
 //                                        }
-                                    }
-                                else { //중복된게 안나왔으면
-                                    Toast.makeText(SignupActivity.this, "사용가능한 아이디 입니다.", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-            }
-        });
+//                                        Toast.makeText(SignupActivity.this, "for end 사용가능한 아이디 입니다.", Toast.LENGTH_SHORT).show();
+//                                    } else { //중복된게 안나왔으면
+//                                        Toast.makeText(SignupActivity.this, "사용가능한 아이디 입니다.", Toast.LENGTH_SHORT).show();
+//                                    }
+//                                }
+//                            });
+//                }
+//                else { //아이디 미입력하고 버튼 누르
+//                    Toast.makeText(SignupActivity.this, "아이디를 입력하세요.", Toast.LENGTH_LONG).show();
+//                 }
+//            }
+//        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

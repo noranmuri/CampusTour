@@ -91,6 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
                     android:text="중복 확인"
+                    android:onClick="onClickShowAlert"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="15sp"
