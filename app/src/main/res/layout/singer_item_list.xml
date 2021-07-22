@@ -8,8 +8,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
-        android:layout_height="80dp"
-        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_width="60dp"
         android:src="@mipmap/ic_launcher"
         android:id="@+id/imageView"/>
 
@@ -25,7 +25,7 @@
             android:id="@+id/textView"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:text="이름"
             android:fontFamily="@font/scdream5"/>
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/textView2"
             android:textColor="@android:color/darker_gray"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:text="전화번호"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/scdream3"/>

@@ -60,10 +60,10 @@ public class FootBtnClickedActivity extends AppCompatActivity {
                                 for(String str:foots) {
                                     int index = foots.indexOf(str);
                                     if (date.get(index).equals("")) {
-                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.question));
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.footprintno));
 
                                     } else {
-                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.paw));
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.footprintok));
                                     }
                                 }
                             }
