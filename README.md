@@ -1,6 +1,7 @@
 
 # CampusTour, _내 손 안의 캠퍼스_
 
+
 ## :rainbow: 팀원 소개
 
 팀명|톰과 제리쓰리
@@ -57,7 +58,7 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 미션 이행률에 따라서 1학년~4학년으로 나누어 학교 생활처럼 느끼게 함
 개인 DB에 따른 미션과 발자취 목록으로 이동하는 버튼이 있음
 
-### 🌹 추가예정
+### 🌹 향후 기능 추가예정
 
 1. 이용가능한 범위의 확대
     - LMS 처럼 학교별로 사용가능하도록 확대
@@ -88,10 +89,40 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
     - 계절에 따라, 날씨에 따라 다른 투어를 제공하여(벚꽃길 걷기,햇살쬐기) 코로나로 답답한 심리를 조금이나마 해소하는 기회 제공
     - 앱 사용시 동의 하에(위치추적) 학우들이 많이 다니는 길을 수집하여 투어를 만드는 알고리즘 제작 가능
 
+
+## 🛠 기술 스택
+<img src = "https://user-images.githubusercontent.com/62596783/126719995-3f22b6e4-b88e-4418-be41-92b5e92a0b33.png" width="150">
+<img src = "https://user-images.githubusercontent.com/62596783/126720247-53fe1b1d-2fad-4635-9780-713223e986c2.png" width="150">
+<img src = "https://user-images.githubusercontent.com/62596783/126720432-6efb6523-3f8a-42c6-b520-06cbdbc59a71.png" width="150">   
+<img src = "https://user-images.githubusercontent.com/62596783/126720560-34053f70-b3f6-4ca7-9fcb-cf33a194bddf.png" width="150">
+<img src = "https://user-images.githubusercontent.com/62596783/126720615-a25ca48f-e5ea-476c-a83a-84f83fb52185.png" width="150">
+
+
 ## ✔ 시스템 구성도
 1. 프로토타입
-2. firestore
-2-1. UserCase <- 미정
+
+![image](https://user-images.githubusercontent.com/62596783/126721926-f937df51-ec8e-4f3a-a1c2-dded5e0b41a6.png)
+
+2. 데이터베이스
+
+- users
+    - name
+    - id
+    - pw
+    - phone
+    - level
+    - coin
+    - mission
+    - foot
+- marker
+    - title
+    - location
+- mission
+    - title
+    - marker
+    - location
+- foot
+    title
 
 #### 페이지별 xml 및 Java 파일 내용 간단 설명
 
@@ -125,11 +156,16 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 - 모든 항목을 입력 했을 때만 회원가입 되도록 버튼 설정
 
 
-3. 지도 페이지 💛
+3. 지도 페이지
 
-<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678364-73e5feeb-6853-4488-a342-97121567ceab.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678393-4a33eaef-2665-4c21-b544-1aed252aa179.jpg" width="150">
+<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150">
+<img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150">
 
-
+- Google Map API를 이용해서 기본위치가 경북대인 지도를 띄움
+- 현재 위치를 실시간으로 확인 가능
+- DB에서 편의시설 정보(marker)를 가져와서 각 버튼별 클릭 이벤트로 마커 표시
+- 홈모양 버튼으로 마이페이지 이동
+- 산모양 버튼으로 미션페이지 빠른 이동
 
 
 4. 마이 페이지
@@ -144,11 +180,24 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 5. 미션 리스트 & 나의 발자취
 
-<img src = "https://user-images.githubusercontent.com/62883338/126678286-8bfff650-1e03-478a-a4e3-8b6f7b34e487.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678412-6b09bb2f-827d-43f7-9992-5c0f1eed05c4.jpg" width="150">
+<img src = "https://user-images.githubusercontent.com/62883338/126678286-8bfff650-1e03-478a-a4e3-8b6f7b34e487.jpg" width="150">
+<img src = "https://user-images.githubusercontent.com/62883338/126678412-6b09bb2f-827d-43f7-9992-5c0f1eed05c4.jpg" width="150">
 
 - ScrollView에 ListView를 넣어서 스크롤을 내려 미션을 총 확인
 - Intent 로 부터 이전 로그인에서 받은 User의 아이디를 가져와서 User별 서비스 제공
 - DB에서 전체 미션 리스트와 User별 미션 이행 리스트를 가져옴
 - 미션 리스트에서는 id에 따라 구분되는 미션을 User가 이행했으면 컬러,이행하지 않았으면 흑백으로 뜸
 - 나의 발자취에서는 id에 따라 구분되는 장소를 User가 방면했으면 물음표,이행하지 않았으면 발자국으로 뜸
-- 
+
+6. 미션 인증
+
+
+<img src = "https://user-images.githubusercontent.com/62596783/126717875-53c20211-fc1c-4282-8440-eab7a96601e3.png" width="150">
+<img src = "https://user-images.githubusercontent.com/62596783/126718049-f6e4d2cd-cedf-476d-bc7a-75a6baf409c1.png" width="150">   
+<img src = "https://user-images.githubusercontent.com/62596783/126718130-60182548-4a0a-48cc-bca6-5dccc0142d83.png" width="150">   
+
+- 미션 위치를 마커로 표시
+- 유클리디안 거리 공식에 따라 현재위치와 미션위치의 위경도 간 거리 구함
+- 거리가 0.0004이하일 경우, 미션 장소에 도달했다고 토스트 띄우고 인증
+- 거리가 0.0004이상 0.0009이하일 경우, 미션 장소에 다가가라고 토스트 띄우기
+- 거리가 0.0009이상일 경우, 미션 장소와 멀리 있다고 토스트 띄우기
