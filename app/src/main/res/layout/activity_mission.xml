@@ -7,7 +7,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="50dp"
         android:background="@color/green_dark"
         android:gravity="center"
         android:text="~미션~"

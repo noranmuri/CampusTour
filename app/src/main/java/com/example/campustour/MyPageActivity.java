@@ -83,8 +83,8 @@ public class MyPageActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), QuestBtnClickedActivity.class);
-                intent.putExtra("Userid",userid.toString());
+                Intent intent = new Intent(getApplicationContext(), MissionListActivity.class);
+                intent.putExtra("Userid", userid.toString());
                 startActivity(intent);
             }
         });

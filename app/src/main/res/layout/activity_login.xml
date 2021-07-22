@@ -56,7 +56,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:hint="PASSWORD"
-                android:textSize="15sp"/>
+                android:inputType="textPassword|numberPassword"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <Button

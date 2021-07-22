@@ -120,8 +120,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border_signup"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"/>
+                    android:inputType="textPassword|numberPassword"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -146,8 +147,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border_signup"
+                    android:inputType="textPassword|numberPassword"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
