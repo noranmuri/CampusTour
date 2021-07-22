@@ -1,5 +1,7 @@
 package com.example.campustour;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,11 +14,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -28,9 +32,29 @@ public class SignupActivity extends AppCompatActivity {
     private EditText pwcheck;
     private EditText phone;
     private TextView same;
+    private Button copycheck;
     Button button;
-
+    AlertDialog.Builder myAlertBuilder;
+    AlertDialog error;
     User user;
+
+    public void onClickShowAlert(View view) {
+        myAlertBuilder = new AlertDialog.Builder(SignupActivity.this);
+        // alert의 title과 Messege 세팅
+        myAlertBuilder.setTitle("아이디 중복");
+        myAlertBuilder.setMessage("이미 사용중인 아이디(닉네임) 입니다. 다시 설정해주세요.");
+        // 버튼 추가 (Ok 버튼과 Cancle 버튼 )
+        myAlertBuilder.setPositiveButton("Ok",new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog,int which){
+                // OK 버튼을 눌렸을 경우
+                Toast.makeText(getApplicationContext(),"Pressed OK",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Alert를 생성해주고 보여주는 메소드(show를 선언해야 Alert가 생성됨)
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,9 +66,37 @@ public class SignupActivity extends AppCompatActivity {
         pwcheck = (EditText) findViewById(R.id.join_pwcheck);
         phone = (EditText) findViewById(R.id.join_phone);
         button = (Button) findViewById(R.id.join_button);
+        copycheck = (Button) findViewById(R.id.button2);
 
 
         same = (TextView)findViewById(R.id.join_pwsame);
+        copycheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.collection("users")
+                        .whereEqualTo("id", id.getText().toString())
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) { //중복된게 있으면 successful
+//                                    for (QueryDocumentSnapshot document : task.getResult()) {
+//                                        if (document.getString("id").toString().equals(id.getText().toString()) ) {
+//                                            // 아이디 같은 계정이 있으면 돌아가!
+                                               error = myAlertBuilder.create();
+                                                error.show();
+//                                                break;
+//                                            }
+//
+//                                        }
+                                    }
+                                else { //중복된게 안나왔으면
+                                    Toast.makeText(SignupActivity.this, "사용가능한 아이디 입니다.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +147,9 @@ public class SignupActivity extends AppCompatActivity {
                 });
 
     }
+
+
+
 
     class User {
         private String name;
