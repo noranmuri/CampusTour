@@ -6,171 +6,181 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="50px"
-    android:paddingTop="20px"
-    android:paddingRight="50px"
-    android:paddingBottom="30px"
-    tools:context=".MyPageActivity ">
+    tools:context=".MyPageActivity">
 
     <!-- 기본적인 개인정보 표시 -->
 
-
-    <TextView
-        android:id="@+id/MyPageTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:paddingLeft="20px"
-        android:text="마이페이지"
-        android:textColor="@color/black"
-        android:textSize="34sp" />
-
     <LinearLayout
-        android:id="@+id/menuLayout"
         android:layout_width="match_parent"
-        android:layout_height="168dp"
-        android:orientation="horizontal">
-
-        <!-- 텍스트 기반 정보 -->
-
-
-        <ImageView
-            android:layout_width="110sp"
-            android:layout_height="110sp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="10sp"
-            android:src="@drawable/img" />
-
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
         <LinearLayout
-            android:layout_width="208dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="30px"
-            android:paddingBottom="20px">
+            android:background="@color/green_dark">
 
             <TextView
-
-                android:id="@+id/UserName"
+                android:id="@+id/MyPageTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:layout_marginTop="15sp"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:layout_margin="20dp"
+                android:text="마이페이지"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green_bright"
+            android:layout_marginBottom="40dp">
 
             <LinearLayout
+                android:id="@+id/menuLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15sp"
+                android:layout_margin="20dp"
                 android:orientation="horizontal">
 
+                <!-- 텍스트 기반 정보 -->
 
-                <TextView
-                    android:id="@+id/TitleOfLevel"
-                    android:layout_width="90dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10sp"
-                    android:layout_weight="3"
-                    android:gravity="left"
-                    android:text="내 등급"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/UserLevel"
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/img" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10sp"
-                    android:layout_marginRight="15sp"
-                    android:layout_weight="6"
-                    android:gravity="center"
-                    android:text="뚜벅이"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15sp"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/Coin"
-                    android:layout_width="86dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10sp"
-                    android:layout_weight="3"
-                    android:text="코     인"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/UserCoin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10sp"
-                    android:layout_weight="4"
-                    android:gravity="center"
-                    android:text="100"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/UserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/PointText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="15sp"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="Point"
-                    android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/TitleOfLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="30dp"
+                            android:gravity="left"
+                            android:text="내 등급"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/UserLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="뚜벅이"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/Coin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="30dp"
+                            android:text="코     인"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/UserCoin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/PointText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Point"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
 
+
+        <!--<ListViewandroid:id="@+id/listView"android:layout_width="match_parent"android:layout_height="120dp"android:layout_marginTop="0dp"android:layout_marginLeft="10dp"></ListView> -->
+
+
+        <Button
+            android:id="@+id/button_foot"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:text="나의 발자취"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_quest"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:text="퀘스트 리스트"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
     </LinearLayout>
 
-    <!--<ListViewandroid:id="@+id/listView"android:layout_width="match_parent"android:layout_height="120dp"android:layout_marginTop="0dp"android:layout_marginLeft="10dp"></ListView> -->
-
-
-    <Button
-        android:id="@+id/button_foot"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/white"
-        android:gravity="center"
-        android:text="나의 발자취"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        android:background="@color/green_dark">
 
-    <Button
-        android:id="@+id/button_quest"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/white"
-        android:gravity="center"
-        android:text="퀘스트 리스트"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:text="(주) 톰과 제리쓰리\n대표 : 황성윤\n주소 : 대구광역시 북구 대학로 80 IT융복합관"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="236dp" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="톰과 제리쓰리"
-        android:textColor="@color/green_dark"
-        android:textSize="20sp" />
 
 </LinearLayout>
