@@ -6,6 +6,7 @@
 [orange](https://github.com/seeun-320)    |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 이세은   
 [Yoon](https://github.com/noranmuri)      |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 황성윤   
 [galaxy](https://github.com/eunha812)     |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 김은하   
+--|--
 
 ## :bulb: 주제
 :bus: 경북대학교 대구캠퍼스만을 위한 캠퍼스 투어앱 👩🏻‍🏫
