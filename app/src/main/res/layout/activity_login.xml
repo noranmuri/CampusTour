@@ -65,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="LOGIN"
+            android:onClick="go_login"
             android:textColor="@color/white"
             android:textSize="13sp"
             android:textStyle="bold"
