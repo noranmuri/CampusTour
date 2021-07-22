@@ -26,7 +26,8 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:textSize="30sp"
-            android:text="이름"/>
+            android:text="이름"
+            android:fontFamily="@font/cafe24ssurroundair"/>
 
         <TextView
             android:layout_height="wrap_content"
@@ -35,7 +36,8 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="24sp"
             android:text="전화번호"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/cafe24ssurroundair"/>
 
     </LinearLayout>
 
