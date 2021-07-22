@@ -91,11 +91,8 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 
 ## 🛠 기술 스택
-<img src = "https://user-images.githubusercontent.com/62596783/126719995-3f22b6e4-b88e-4418-be41-92b5e92a0b33.png" width="150">
-<img src = "https://user-images.githubusercontent.com/62596783/126720247-53fe1b1d-2fad-4635-9780-713223e986c2.png" width="150">
-<img src = "https://user-images.githubusercontent.com/62596783/126720432-6efb6523-3f8a-42c6-b520-06cbdbc59a71.png" width="150">   
-<img src = "https://user-images.githubusercontent.com/62596783/126720560-34053f70-b3f6-4ca7-9fcb-cf33a194bddf.png" width="150">
-<img src = "https://user-images.githubusercontent.com/62596783/126720615-a25ca48f-e5ea-476c-a83a-84f83fb52185.png" width="150">
+<img src = "https://user-images.githubusercontent.com/62596783/126719995-3f22b6e4-b88e-4418-be41-92b5e92a0b33.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720247-53fe1b1d-2fad-4635-9780-713223e986c2.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720432-6efb6523-3f8a-42c6-b520-06cbdbc59a71.png" width="150">   
+<img src = "https://user-images.githubusercontent.com/62596783/126720560-34053f70-b3f6-4ca7-9fcb-cf33a194bddf.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720615-a25ca48f-e5ea-476c-a83a-84f83fb52185.png" width="150">
 
 
 ## ✔ 시스템 구성도
@@ -114,15 +111,19 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
     - coin
     - mission
     - foot
+|
 - marker
     - title
     - location
+|
 - mission
     - title
     - marker
     - location
+|
 - foot
-    title
+    - title
+ --|--|--|--
 
 #### 페이지별 xml 및 Java 파일 내용 간단 설명
 
@@ -158,8 +159,8 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 3. 지도 페이지
 
-<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150">
-<img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150">
+<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150">|
+<img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150">   
 
 - Google Map API를 이용해서 기본위치가 경북대인 지도를 띄움
 - 현재 위치를 실시간으로 확인 가능
@@ -180,8 +181,8 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 5. 미션 리스트 & 나의 발자취
 
-<img src = "https://user-images.githubusercontent.com/62883338/126678286-8bfff650-1e03-478a-a4e3-8b6f7b34e487.jpg" width="150">
-<img src = "https://user-images.githubusercontent.com/62883338/126678412-6b09bb2f-827d-43f7-9992-5c0f1eed05c4.jpg" width="150">
+<img src = "https://user-images.githubusercontent.com/62883338/126678286-8bfff650-1e03-478a-a4e3-8b6f7b34e487.jpg" width="150">|
+<img src = "https://user-images.githubusercontent.com/62883338/126678412-6b09bb2f-827d-43f7-9992-5c0f1eed05c4.jpg" width="150">   
 
 - ScrollView에 ListView를 넣어서 스크롤을 내려 미션을 총 확인
 - Intent 로 부터 이전 로그인에서 받은 User의 아이디를 가져와서 User별 서비스 제공
@@ -192,8 +193,8 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 6. 미션 인증
 
 
-<img src = "https://user-images.githubusercontent.com/62596783/126717875-53c20211-fc1c-4282-8440-eab7a96601e3.png" width="150">
-<img src = "https://user-images.githubusercontent.com/62596783/126718049-f6e4d2cd-cedf-476d-bc7a-75a6baf409c1.png" width="150">   
+<img src = "https://user-images.githubusercontent.com/62596783/126717875-53c20211-fc1c-4282-8440-eab7a96601e3.png" width="150">|
+<img src = "https://user-images.githubusercontent.com/62596783/126718049-f6e4d2cd-cedf-476d-bc7a-75a6baf409c1.png" width="150">|
 <img src = "https://user-images.githubusercontent.com/62596783/126718130-60182548-4a0a-48cc-bca6-5dccc0142d83.png" width="150">   
 
 - 미션 위치를 마커로 표시
