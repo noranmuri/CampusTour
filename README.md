@@ -78,5 +78,7 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 ## :rainbow: Contributors
 
-[thingzoo](https://github.com/thing-zoo)  | [orange](https://github.com/seeun-320)  | [Yoon](https://github.com/noranmuri)|[galaxy](https://github.com/eunha812)
---|--|--|--
+[thingzoo](https://github.com/thing-zoo)  |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 정명주
+[orange](https://github.com/seeun-320)    |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 이세은
+[Yoon](https://github.com/noranmuri)      |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 황성윤
+[galaxy](https://github.com/eunha812)     |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 김은하
