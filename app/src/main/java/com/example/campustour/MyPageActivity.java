@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.EditText;
+import android.util.Log;
+
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,6 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class MyPageActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    String userlevel = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +33,26 @@ public class MyPageActivity extends AppCompatActivity {
 
         TextView UserIdText = (TextView) findViewById(R.id.UserName);
         UserIdText.setText(userid.toString());
+
+
+        db.collection("users")
+                .whereEqualTo("id", userid.toString())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                               if (task.isSuccessful()) {
+                                                   for (QueryDocumentSnapshot document : task.getResult()) {
+                                                       userlevel = document.getString("level").toString();
+                                                       TextView UserLevel = (TextView) findViewById(R.id.UserLevel);
+                                                       UserLevel.setText(userlevel.toString());
+                                                   }
+
+                                               }
+                                           }
+                                       });
+
+
 
 
 
