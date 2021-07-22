@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:id="@+id/textView"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
             android:textSize="30sp"
             android:text="이름"/>

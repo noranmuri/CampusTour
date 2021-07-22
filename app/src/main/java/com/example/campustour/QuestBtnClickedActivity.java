@@ -1,17 +1,27 @@
 package com.example.campustour;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class QuestBtnClickedActivity extends AppCompatActivity {
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,10 +30,22 @@ public class QuestBtnClickedActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.questView);
         SingerAdapter adapter = new SingerAdapter();
-        adapter.addItem(new SingerItem("IT대학 건물 다 가보기","2021-01-01",R.drawable.complete1));
-        adapter.addItem(new SingerItem("동문 개나리 보러 가기"," ",R.drawable.bcomplete1));
 
-        listView.setAdapter(adapter);
+        db.collection("mission").document("major")
+                .collection("computer").get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            for(QueryDocumentSnapshot document : task.getResult()) {
+                                //Log.d("DB", document.getId() + "=>" + document.getData());
+                                String str = document.getString("title").toString();
+                                adapter.addItem(new SingerItem(document.getString("title").toString(),"2021-01-01",R.drawable.bcomplete1));
+                            }
+                            listView.setAdapter(adapter);
+                        }
+                    }
+                });
     }
 
     class SingerAdapter extends BaseAdapter {
@@ -35,6 +57,13 @@ public class QuestBtnClickedActivity extends AppCompatActivity {
         }
         public void addItem(SingerItem item){
             items.add(item);
+        }
+
+        public void addList(ArrayList<String> list){
+            for(String str:list){
+                //Log.d(str,"str" + str.toString());
+                this.addItem(new SingerItem(str.toString(),"2021-01-01",R.drawable.complete1));
+            }
         }
 
         @Override
