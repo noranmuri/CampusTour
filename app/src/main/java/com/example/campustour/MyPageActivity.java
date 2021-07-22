@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -13,6 +14,12 @@ public class MyPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
+
+        Intent main_intent = getIntent();
+        String userid = main_intent.getStringExtra("Userid");
+
+        TextView UserIdText = (TextView) findViewById(R.id.UserName);
+        UserIdText.setText(userid.toString());
 
         Button foot_btn = (Button) findViewById(R.id.button_foot);
         foot_btn.setOnClickListener(new View.OnClickListener() {

@@ -29,20 +29,19 @@ public class FootBtnClickedActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.listView);
         SingerAdapter adapter = new SingerAdapter();
 
-        db.collection("foot").document("IT")
-                .collection("computer").get()
+        db.collection("foot").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 //Log.d("DB", document.getId() + "=>" + document.getData());
-                                String when = document.getString("when").toString();
-                                if (when.equals("")) {
-                                    adapter.addItem(new SingerItem(document.getString("title").toString(), when, R.drawable.question));
-                                } else {
+                                //String when = document.getString("when").toString();
+                                //if (when.equals("")) {
+                                //    adapter.addItem(new SingerItem(document.getString("title").toString(), when, R.drawable.question));
+                                //} else {
                                     adapter.addItem(new SingerItem(document.getString("title").toString(), "2021-01-01", R.drawable.paw));
-                                }
+                                //}
                                 listView.setAdapter(adapter);
                             }
                         }

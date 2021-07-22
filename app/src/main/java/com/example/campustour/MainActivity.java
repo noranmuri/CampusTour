@@ -40,11 +40,15 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent login_intent = getIntent();
+        String id = login_intent.getStringExtra("Userid");
+
         ImageButton mypage_btn = (ImageButton) findViewById(R.id.mypage);
         mypage_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), MyPageActivity.class);
+                intent.putExtra("Userid",id.toString());
                 startActivity(intent);
             }
         });

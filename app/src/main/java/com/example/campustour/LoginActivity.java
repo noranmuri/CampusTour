@@ -88,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if (document.getString("id").toString().equals(id.getText().toString()) ) {
                                         if (document.getString("pw").toString().equals(pw.getText().toString())) {
                                             Intent main_page = new Intent(LoginActivity.this, MainActivity.class);
+                                            main_page.putExtra("Userid",id.getText().toString());
                                             Toast.makeText(LoginActivity.this, "로그인 성공이요~", Toast.LENGTH_SHORT).show();
                                             startActivity(main_page);
                                             finish();
