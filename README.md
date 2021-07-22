@@ -91,6 +91,15 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 ## ✔ 시스템 구성도
 1. 프로토타입
+![image](https://user-images.githubusercontent.com/62810560/126678679-c920f46a-fd16-468f-aea4-f5c0d09fc676.png)
+![image](https://user-images.githubusercontent.com/62810560/126678704-6d50f235-23d4-4956-b3a8-cf5d6d9a4611.png)
+![image](https://user-images.githubusercontent.com/62810560/126678730-654b4f68-3112-4e11-a1d1-4d77ff19191b.png)
+![image](https://user-images.githubusercontent.com/62810560/126678750-73a98bb1-bc7c-4373-a8ed-a84cdfd7e61f.png)
+![image](https://user-images.githubusercontent.com/62810560/126678764-02ee8757-80d6-49a7-a19b-4e21c1567ea1.png)
+![image](https://user-images.githubusercontent.com/62810560/126678779-20211273-0663-427e-be43-300027e7dd8d.png)
+![image](https://user-images.githubusercontent.com/62810560/126678798-5144d42b-68a7-40ad-b0a8-1ecd0a1b4839.png)
+![image](https://user-images.githubusercontent.com/62810560/126678816-36c47e64-e547-4da2-ad11-d57e5b1948ca.png)
+
 2. firestore
 2-1. UserCase <- 미정
 
