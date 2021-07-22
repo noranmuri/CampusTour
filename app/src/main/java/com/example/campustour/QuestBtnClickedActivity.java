@@ -1,5 +1,6 @@
 package com.example.campustour;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,24 +29,49 @@ public class QuestBtnClickedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mission_list);
 
+        Intent mypage_intent = getIntent();
+        String userid = mypage_intent.getStringExtra("Userid");
+
         ListView listView = findViewById(R.id.questView);
         SingerAdapter adapter = new SingerAdapter();
+        ArrayList<String> missions = new ArrayList<>();
 
-        db.collection("mission").document("major")
-                .collection("computer").get()
+        db.collection("mission").document("major").collection("computer").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
-                            for(QueryDocumentSnapshot document : task.getResult()) {
-                                //Log.d("DB", document.getId() + "=>" + document.getData());
-                                String str = document.getString("title").toString();
-                                adapter.addItem(new SingerItem(document.getString("title").toString(),"2021-01-01",R.drawable.bcomplete1));
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                missions.add(document.getString("title").toString());
                             }
                             listView.setAdapter(adapter);
                         }
                     }
                 });
+
+        db.collection("users").get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if(document.getString("id").toString().equals(userid.toString())){
+                                    List<String> date = (List<String>)document.get("mission");
+                                    for(String str:missions){
+                                        int index = missions.indexOf(str);
+                                        if(date.get(index).equals("")) {
+                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.bcomplete1));
+                                        } else {
+                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.complete1));
+                                        }
+                                    }
+                                }
+                            }
+                            listView.setAdapter(adapter);
+                        }
+                    }
+                });
+
     }
 
     class SingerAdapter extends BaseAdapter {

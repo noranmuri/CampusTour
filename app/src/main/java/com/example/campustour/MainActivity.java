@@ -1,6 +1,7 @@
 package com.example.campustour;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
@@ -11,7 +12,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,17 +23,18 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 
-public class MainActivity extends FragmentActivity
-        implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
+public class MainActivity extends AppCompatActivity implements
+        OnMapReadyCallback,
+        GoogleMap.OnMyLocationButtonClickListener,
+        GoogleMap.OnMyLocationClickListener {
 
     private GoogleMap mMap;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+    private static final String TAG = MainActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,12 @@ public class MainActivity extends FragmentActivity
 
         Intent login_intent = getIntent();
         String id = login_intent.getStringExtra("Userid");
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
 
         ImageButton mypage_btn = (ImageButton) findViewById(R.id.mypage);
         mypage_btn.setOnClickListener(new View.OnClickListener() {
@@ -53,12 +60,15 @@ public class MainActivity extends FragmentActivity
             }
         });
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
-
+        ImageButton mission_btn = (ImageButton) findViewById(R.id.mission);
+        mission_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), MissionActivity.class);
+                intent.putExtra("Userid",id.toString());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -147,10 +157,12 @@ public class MainActivity extends FragmentActivity
                                 });
                             }
                         } else {
-                            Log.d("DB", "Error getting documents: ", task.getException());
+                            Log.d(TAG, "Error getting documents: ", task.getException());
                         }
                     }
                 });
+
+
     }
 
 

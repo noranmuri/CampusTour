@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="start"
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -34,10 +33,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="showMarker"
                 android:background="@color/green_dark"
-                android:textColor="@color/white"
-                android:text="@string/btn" />
+                android:onClick="showMarker"
+                android:text="@string/btn"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn2"
@@ -45,10 +44,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="showMarker"
                 android:background="@color/green_dark"
-                android:textColor="@color/white"
-                android:text="@string/btn2" />
+                android:onClick="showMarker"
+                android:text="@string/btn2"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn3"
@@ -56,10 +55,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="showMarker"
                 android:background="@color/green_dark"
-                android:textColor="@color/white"
-                android:text="@string/btn3" />
+                android:onClick="showMarker"
+                android:text="@string/btn3"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn4"
@@ -67,10 +66,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="showMarker"
                 android:background="@color/green_dark"
-                android:textColor="@color/white"
-                android:text="@string/btn4" />
+                android:onClick="showMarker"
+                android:text="@string/btn4"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn5"
@@ -78,10 +77,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="showMarker"
                 android:background="@color/green_dark"
-                android:textColor="@color/white"
-                android:text="@string/btn5" />
+                android:onClick="showMarker"
+                android:text="@string/btn5"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn6"
@@ -89,10 +88,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="showMarker"
                 android:background="@color/green_dark"
-                android:textColor="@color/white"
-                android:text="@string/btn6" />
+                android:onClick="showMarker"
+                android:text="@string/btn6"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </HorizontalScrollView>

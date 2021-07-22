@@ -1,5 +1,6 @@
 package com.example.campustour;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FootBtnClickedActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -26,8 +28,12 @@ public class FootBtnClickedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_footbtn);
 
+        Intent mypage_intent = getIntent();
+        String userid = mypage_intent.getStringExtra("Userid");
+
         ListView listView = findViewById(R.id.listView);
         SingerAdapter adapter = new SingerAdapter();
+        ArrayList<String> foots = new ArrayList<>();
 
         db.collection("foot").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -35,15 +41,32 @@ public class FootBtnClickedActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                //Log.d("DB", document.getId() + "=>" + document.getData());
-                                //String when = document.getString("when").toString();
-                                //if (when.equals("")) {
-                                //    adapter.addItem(new SingerItem(document.getString("title").toString(), when, R.drawable.question));
-                                //} else {
-                                    adapter.addItem(new SingerItem(document.getString("title").toString(), "2021-01-01", R.drawable.paw));
-                                //}
-                                listView.setAdapter(adapter);
+                                foots.add(document.getString("title").toString());
                             }
+                            listView.setAdapter(adapter);
+                        }
+                    }
+                });
+
+        db.collection("users").get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if(document.getString("id").toString().equals(userid.toString())){
+                                    List<String> date = (List<String>)document.get("foot");
+                                    for(String str:foots){
+                                        int index = foots.indexOf(str);
+                                        if(date.get(index).equals("")) {
+                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.question));
+                                        } else {
+                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.paw));
+                                        }
+                                    }
+                                }
+                            }
+                            listView.setAdapter(adapter);
                         }
                     }
                 });
