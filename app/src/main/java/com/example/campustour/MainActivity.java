@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), MissionActivity.class);
+                intent.putExtra("Userid",id.toString());
                 startActivity(intent);
             }
         });
