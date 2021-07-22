@@ -49,29 +49,27 @@ public class QuestBtnClickedActivity extends AppCompatActivity {
                     }
                 });
 
-        db.collection("users").get()
+        db.collection("users")
+                .whereEqualTo("id", userid.toString())
+                .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
+                        if(task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                if(document.getString("id").toString().equals(userid.toString())){
-                                    List<String> date = (List<String>)document.get("mission");
-                                    for(String str:missions){
-                                        int index = missions.indexOf(str);
-                                        if(date.get(index).equals("")) {
-                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.bcomplete1));
-                                        } else {
-                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.complete1));
-                                        }
-                                    }
-                                }
+                                List<String> date = (List<String>)document.get("mission");
+                                for(String str:missions){
+                                    int index = missions.indexOf(str);
+                                    if(date.get(index).equals("")) {
+                                        adapter.addItem(new SingerItem(str, date.get(index),R.drawable.bcomplete1));
+                                    } else {
+                                        adapter.addItem(new SingerItem(str, date.get(index),R.drawable.complete1));
+                                    } }
                             }
                             listView.setAdapter(adapter);
                         }
                     }
                 });
-
     }
 
     class SingerAdapter extends BaseAdapter {
