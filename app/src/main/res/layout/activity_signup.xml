@@ -17,10 +17,10 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="32sp"
+            android:textSize="30sp"
             android:text="회원가입"
             android:layout_margin="20dp"
-            android:fontFamily="@font/cafe24ssurround"/>
+            android:fontFamily="@font/scdream8"/>
     </LinearLayout>
 
     <ScrollView
@@ -44,11 +44,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="이   름"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_marginRight="30dp"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream5"/>
 
                 <EditText
                     android:id="@+id/join_name"
@@ -56,9 +56,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border_signup"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream3"/>
 
             </LinearLayout>
 
@@ -77,7 +77,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:layout_marginRight="15dp"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream5"/>
 
                 <EditText
                     android:id="@+id/join_id"
@@ -85,10 +85,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:layout_marginRight="15dp"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
                     android:background="@drawable/border_signup"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream3"/>
 
                 <Button
                     android:id="@+id/button2"
@@ -101,7 +101,7 @@
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:backgroundTint="#223029"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream4"/>
 
             </LinearLayout>
 
@@ -115,11 +115,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="비 밀 번 호"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream5"/>
 
                 <EditText
                     android:id="@+id/join_pw"
@@ -129,8 +129,8 @@
                     android:background="@drawable/border_signup"
                     android:inputType="textPassword"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:textSize="18sp"
+                    android:fontFamily="@font/scdream3"/>
             </LinearLayout>
 
             <LinearLayout
@@ -144,11 +144,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="비밀번호 확인"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:layout_marginRight="15dp"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream5"/>
 
                 <EditText
                     android:id="@+id/join_pwcheck"
@@ -158,8 +158,8 @@
                     android:background="@drawable/border_signup"
                     android:inputType="textPassword"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:textSize="18sp"
+                    android:fontFamily="@font/scdream3"/>
 
             </LinearLayout>
 
@@ -171,7 +171,7 @@
                 android:textSize="15sp"
                 android:layout_gravity="right"
                 android:layout_marginRight="10dp"
-                android:fontFamily="@font/cafe24ssurroundair"/>
+                android:fontFamily="@font/scdream4"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -185,11 +185,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전 화 번 호"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream5"/>
 
                 <EditText
                     android:id="@+id/join_phone"
@@ -197,9 +197,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border_signup"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/cafe24ssurroundair"/>
+                    android:fontFamily="@font/scdream3"/>
 
             </LinearLayout>
 
@@ -210,10 +210,10 @@
                 android:textColor="@color/white"
                 android:text="회원가입"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:layout_marginTop="60dp"
                 android:backgroundTint="@color/green_dark"
-                android:fontFamily="@font/cafe24ssurroundair"/>
+                android:fontFamily="@font/scdream5"/>
 
         </LinearLayout>
 

@@ -28,9 +28,9 @@
                 android:layout_margin="20dp"
                 android:text="마이페이지"
                 android:textColor="@color/white"
-                android:textSize="34sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/cafe24ssurround"/>
+                android:fontFamily="@font/scdream8"/>
 
         </LinearLayout>
 
@@ -69,9 +69,9 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/black"
-                        android:textSize="25sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/cafe24ssurround"/>
+                        android:fontFamily="@font/scdream5"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -88,16 +88,16 @@
                             android:gravity="left"
                             android:text="내 등급"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:fontFamily="@font/cafe24ssurroundair"/>
+                            android:textSize="16sp"
+                            android:fontFamily="@font/scdream4"/>
 
                         <TextView
                             android:id="@+id/UserLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="뚜벅이"
-                            android:textSize="18sp"
-                            android:fontFamily="@font/cafe24ssurroundair"/>
+                            android:textSize="14sp"
+                            android:fontFamily="@font/scdream3"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -114,25 +114,25 @@
                             android:layout_marginRight="30dp"
                             android:text="코     인"
                             android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:fontFamily="@font/cafe24ssurroundair"/>
+                            android:textSize="16sp"
+                            android:fontFamily="@font/scdream4"/>
 
                         <TextView
                             android:id="@+id/UserCoin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="100"
-                            android:textSize="18sp"
+                            android:textSize="15sp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/cafe24ssurroundair"/>
+                            android:fontFamily="@font/scdream3"/>
 
                         <TextView
                             android:id="@+id/PointText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Point"
-                            android:textSize="18sp"
-                            android:fontFamily="@font/cafe24ssurroundair"/>
+                            android:textSize="14sp"
+                            android:fontFamily="@font/scdream3"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -153,9 +153,9 @@
             android:layout_marginTop="10dp"
             android:text="나의 발자취"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
-            android:fontFamily="@font/cafe24ssurroundair"/>
+            android:fontFamily="@font/scdream6"/>
 
         <TextView
             android:id="@+id/button_quest"
@@ -165,9 +165,9 @@
             android:layout_marginLeft="40dp"
             android:text="퀘스트 리스트"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
-            android:fontFamily="@font/cafe24ssurroundair"/>
+            android:fontFamily="@font/scdream6"/>
 
     </LinearLayout>
 
@@ -187,8 +187,8 @@
             android:text="(주) 톰과 제리쓰리\n대표 : 황성윤\n주소 : 대구광역시 북구 대학로 80 IT융복합관"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="15sp"
-            android:fontFamily="@font/cafe24ssurroundair"/>
+            android:textSize="12sp"
+            android:fontFamily="@font/scdream4"/>
 
     </LinearLayout>
 
