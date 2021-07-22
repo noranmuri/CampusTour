@@ -42,8 +42,10 @@ public class SignupActivity extends AppCompatActivity {
     AlertDialog error;
 //    User user;
     HashMap<String, Object> newUser = new HashMap<>();
-    String[] mission = new String[10];
-    String[] foot = new String[10];
+    ArrayList<String> mission = new ArrayList<String>();
+    ArrayList<String> foot = new ArrayList<String>();
+
+
 
     public void onClickShowAlert(View view) {
         myAlertBuilder = new AlertDialog.Builder(SignupActivity.this);
@@ -102,6 +104,11 @@ public class SignupActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.join_button);
         copycheck = (Button) findViewById(R.id.button2);
 
+        for (int i = 0;i<11;i++)
+        {
+            mission.add("");
+            foot.add("");
+        }
 
         same = (TextView)findViewById(R.id.join_pwsame);
 //        copycheck.setOnClickListener(new View.OnClickListener() {
@@ -148,13 +155,13 @@ public class SignupActivity extends AppCompatActivity {
                     newUser.put("phone",phone.getText().toString());
                     newUser.put("level","1학년");
                     newUser.put("coin",0);
-                    newUser.put("mission",new ArrayList<String>(10));
-                    newUser.put("foot",new ArrayList<String>(10));
+                    newUser.put("mission",mission);
+                    newUser.put("foot",foot);
 //                    user = new User(name.getText().toString() ,
 //                            id.getText().toString() ,pw.getText().toString(),
 //                            pwcheck.getText().toString(), phone.getText().toString());
                     // 빈칸이 없는 경우
-                    Toast.makeText(SignupActivity.this, "모든 항목 입력.", Toast.LENGTH_LONG).show();
+
                     if (pw.getText().toString().equals(pwcheck.getText().toString())) {
                         same.setText("비밀번호 일치");
                         createUser(newUser);
