@@ -97,7 +97,9 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 #### 페이지별 xml 및 Java 파일 내용 간단 설명
 
 0. 스플래시 화면
+
 <img src = "https://user-images.githubusercontent.com/62883338/126678234-2987492c-7d88-4d41-abfa-09796bdd46ad.jpg" width="150">
+
 - Handler 을 사용하여 runnable 시작
 - 어플 첫 화면으로, 어플의 목적 및 방향성을 가시적으로 제시
 - 이미지에 바운스, 텍스트에 투명도 조절을 하여 애니메이션 설정
@@ -105,7 +107,9 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 
 1. 로그인
+
 <img src = "https://user-images.githubusercontent.com/62883338/126678203-3ba6eaae-f298-4876-bbe8-6b8ec4fd3617.jpg" width="150">
+
 - 비밀번호 입력시 '\*'를 사용하여 정보 보호
 - 정보가 존재하는지 -> 아이디로 DB에서 개인정보를 가져와 비밀번호와 비교
 - 일치하지 않을시 틀림 메세지를 띄우고, 맞을시 Intent 를 통해 MainPage(지도페이지)로 User의 아이디를 넘김
@@ -113,7 +117,9 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 
 2. 회원가입
+
 <img src = "https://user-images.githubusercontent.com/62883338/126678169-35c460d2-f0b7-43ac-bef6-fe85be284ddd.jpg" width="150">
+
 - EditText 를 이용하여 User의 정보를 얻음
 - DB에서 User들의 아이디를 가져와 현재 입력한 User의 아이디와 중복 유무 확인
 - 비밀번호와 비밀번호 확인을 통해 정확한 입력 확인
@@ -121,16 +127,16 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 
 3. 지도 페이지 💛
-<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150">
-<img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150">
-<img src = "https://user-images.githubusercontent.com/62883338/126678364-73e5feeb-6853-4488-a342-97121567ceab.jpg" width="150">
-<img src = "https://user-images.githubusercontent.com/62883338/126678393-4a33eaef-2665-4c21-b544-1aed252aa179.jpg" width="150">
+
+<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678364-73e5feeb-6853-4488-a342-97121567ceab.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678393-4a33eaef-2665-4c21-b544-1aed252aa179.jpg" width="150">
 
 
 
 
 4. 마이 페이지
+
 <img src = "https://user-images.githubusercontent.com/62883338/126677925-0cefe74a-40d7-4637-8186-ee54f9e0b40b.jpg" width="150">
+
 - Layout 의 vertical, horizontal 특성을 사용하여 레이아웃 UI 를 체계적으로 구성
 - 로그인->지도 페이지 로 부터 Intent 를 통해 받은 User의 아이디를 가지고 DB 로부터 개인 정보 습득
 - 사진, User의 닉네임, 단계, 코인을 표시
@@ -138,8 +144,9 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 - 버튼을 누를 시, Intent 를 통해 User 아이디와 함께 이동
 
 5. 미션 리스트 & 나의 발자취
-<img src = "https://user-images.githubusercontent.com/62883338/126678286-8bfff650-1e03-478a-a4e3-8b6f7b34e487.jpg" width="150">
-<img src = "https://user-images.githubusercontent.com/62883338/126678412-6b09bb2f-827d-43f7-9992-5c0f1eed05c4.jpg" width="150">
+
+<img src = "https://user-images.githubusercontent.com/62883338/126678286-8bfff650-1e03-478a-a4e3-8b6f7b34e487.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678412-6b09bb2f-827d-43f7-9992-5c0f1eed05c4.jpg" width="150">
+
 - ScrollView에 ListView를 넣어서 스크롤을 내려 미션을 총 확인
 - Intent 로 부터 이전 로그인에서 받은 User의 아이디를 가져와서 User별 서비스 제공
 - DB에서 전체 미션 리스트와 User별 미션 이행 리스트를 가져옴
