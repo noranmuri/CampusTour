@@ -67,7 +67,7 @@ public class MyPageActivity extends AppCompatActivity {
                     }
                 });
 
-        TextView foot_btn = (TextView) findViewById(R.id.button_foot);
+        Button foot_btn = (Button) findViewById(R.id.button_foot);
         foot_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -78,7 +78,7 @@ public class MyPageActivity extends AppCompatActivity {
             }
         });
 
-        TextView quest_btn = (TextView) findViewById(R.id.button_quest);
+        Button quest_btn = (Button) findViewById(R.id.button_quest);
         quest_btn.setOnClickListener(new View.OnClickListener(){
 
             @Override

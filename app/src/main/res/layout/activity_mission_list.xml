@@ -22,7 +22,7 @@
         android:fontFamily="@font/scdream8"/>
 
     <ListView
-        android:id="@+id/questView"
+        android:id="@+id/missionView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

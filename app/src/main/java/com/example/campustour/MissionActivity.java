@@ -42,6 +42,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 import java.util.List;
@@ -80,7 +82,6 @@ public class MissionActivity extends AppCompatActivity implements
     LatLng target;  //미션장소
     Button check_btn; //인증버튼
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +112,7 @@ public class MissionActivity extends AppCompatActivity implements
             mapFragment.getMapAsync(this);
         }
 
+        //미션장소 인증하기
         check_btn = (Button) findViewById(R.id.check_btn);
         check_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +143,6 @@ public class MissionActivity extends AppCompatActivity implements
 
     @Override
     public void onMapReady(@NonNull final GoogleMap googleMap) {
-
         mMap = googleMap;
         textView = (TextView) findViewById(R.id.textView7);
 
@@ -156,41 +157,43 @@ public class MissionActivity extends AppCompatActivity implements
         mMap.setOnMyLocationButtonClickListener(this);
         mMap.setOnMyLocationClickListener(this);
 
+        //미션리스트에서 타이틀 받아오기
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+
         //미션 위치 마커 표시
-        DocumentReference docRef = db.collection("mission").document("major").collection("computer").document("IT융복합관");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        target = new LatLng(document.getGeoPoint("location").getLatitude(), document.getGeoPoint("location").getLongitude());
-                        final MarkerOptions marker = new MarkerOptions()
-                                .position(target)
-                                .title((String) document.get("title"));
-//                                        .snippet(document.get("snippet"))
+        db.collection("mission")
+                .whereEqualTo("title", title)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("DB", document.getId() + " => " + document.getData());
 
-                        textView.setText(document.getString("title").toString()+"을(를) 방문하세요!");
+                                target = new LatLng(document.getGeoPoint("location").getLatitude(), document.getGeoPoint("location").getLongitude());
+                                final MarkerOptions marker = new MarkerOptions()
+                                        .position(target)
+                                        .title(document.getString("marker"))
+                                        .snippet(document.getString("title"));
 
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                mMap.addMarker(marker);
-                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(target, 16));
+                                textView.setText(document.getString("title").toString());
+
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        mMap.addMarker(marker);
+                                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(target, 16));
 //                                mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
+                                    }
+                                });
                             }
-                        });
-                    } else {
-                        Log.d(TAG, "No such document");
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
                     }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
-
-
+                });
     }
 
     //실시간 위치 읽기
