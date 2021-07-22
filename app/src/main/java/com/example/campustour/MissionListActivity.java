@@ -2,9 +2,9 @@ package com.example.campustour;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
@@ -32,11 +32,12 @@ public class MissionListActivity extends AppCompatActivity {
         Intent mypage_intent = getIntent();
         String userid = mypage_intent.getStringExtra("Userid");
 
-        ListView listView = findViewById(R.id.questView);
+        ListView listView = findViewById(R.id.missionView);
         SingerAdapter adapter = new SingerAdapter();
         ArrayList<String> missions = new ArrayList<>();
 
-        db.collection("mission").document("major").collection("computer").get()
+        db.collection("mission")
+                .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -61,15 +62,27 @@ public class MissionListActivity extends AppCompatActivity {
                                 for(String str:missions){
                                     int index = missions.indexOf(str);
                                     if(date.get(index).equals("")) {
-                                        adapter.addItem(new SingerItem(str, date.get(index),R.drawable.bcomplete1));
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.bcomplete1));
                                     } else {
-                                        adapter.addItem(new SingerItem(str, date.get(index),R.drawable.complete1));
-                                    } }
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.complete1));
+                                    }
+                                }
                             }
                             listView.setAdapter(adapter);
                         }
                     }
                 });
+
+        //아이템 클릭 시 미션리스트
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                SingerItem item = (SingerItem)adapter.getItem(i);
+                Intent intent = new Intent(getApplicationContext(), MissionActivity.class);
+                intent.putExtra("title", item.name);
+                startActivity(intent);
+            }
+        });
     }
 
     class SingerAdapter extends BaseAdapter {

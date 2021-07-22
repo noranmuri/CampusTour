@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LinearLayout
-    tools:context=".FootBtnClickedActivity"
+    tools:context=".MissionListActivity"
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:fontFamily="@font/scdream8"/>
 
     <ListView
-        android:id="@+id/questView"
+        android:id="@+id/missionView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

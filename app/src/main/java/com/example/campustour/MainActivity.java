@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements
         mission_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), MissionActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MissionListActivity.class);
                 intent.putExtra("Userid",id.toString());
                 startActivity(intent);
             }
