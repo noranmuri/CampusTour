@@ -121,6 +121,7 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 
 3. 지도 페이지 💛
+
 <img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678364-73e5feeb-6853-4488-a342-97121567ceab.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678393-4a33eaef-2665-4c21-b544-1aed252aa179.jpg" width="150">
 
 
@@ -135,6 +136,8 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 - 버튼을 누를 시, Intent 를 통해 User 아이디와 함께 이동
 
 5. 미션 리스트 & 나의 발자취
+
+
 <img src = "https://user-images.githubusercontent.com/62883338/126678286-8bfff650-1e03-478a-a4e3-8b6f7b34e487.jpg" width="150"> | <img src = "https://user-images.githubusercontent.com/62883338/126678412-6b09bb2f-827d-43f7-9992-5c0f1eed05c4.jpg" width="150">
 - ScrollView에 ListView를 넣어서 스크롤을 내려 미션을 총 확인
 - Intent 로 부터 이전 로그인에서 받은 User의 아이디를 가져와서 User별 서비스 제공
