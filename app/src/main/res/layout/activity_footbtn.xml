@@ -19,6 +19,7 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center"
+        android:fontFamily="@font/scdream8"
         />
 
     <ListView

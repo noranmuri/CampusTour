@@ -29,7 +29,8 @@
             android:text="로그인"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/scdream8"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +47,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:hint="ID"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:fontFamily="@font/scdream5"/>
 
             <EditText
                 android:id="@+id/login_pw"
@@ -57,7 +59,8 @@
                 android:layout_marginBottom="10dp"
                 android:hint="PASSWORD"
                 android:inputType="textPassword"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:fontFamily="@font/scdream5"/>
         </LinearLayout>
 
         <Button
@@ -70,7 +73,8 @@
             android:textColor="@color/white"
             android:textSize="13sp"
             android:textStyle="bold"
-            android:backgroundTint="#223029"/>
+            android:backgroundTint="#223029"
+            android:fontFamily="@font/scdream5"/>
 
         <TextView
             android:id="@+id/signup"
@@ -82,7 +86,8 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:textColor="@color/white"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:fontFamily="@font/scdream8"/>
 
     </LinearLayout>
 

@@ -19,7 +19,9 @@
             android:textStyle="bold"
             android:textSize="30sp"
             android:text="회원가입"
-            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
             android:fontFamily="@font/scdream8"/>
     </LinearLayout>
 
