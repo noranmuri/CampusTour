@@ -35,7 +35,8 @@ public class FootBtnClickedActivity extends AppCompatActivity {
         SingerAdapter adapter = new SingerAdapter();
         ArrayList<String> foots = new ArrayList<>();
 
-        db.collection("foot").get()
+        db.collection("foot")
+                .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -48,21 +49,21 @@ public class FootBtnClickedActivity extends AppCompatActivity {
                     }
                 });
 
-        db.collection("users").get()
+        db.collection("users")
+                .whereEqualTo("id",userid.toString())
+                .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                if(document.getString("id").toString().equals(userid.toString())){
-                                    List<String> date = (List<String>)document.get("foot");
-                                    for(String str:foots){
-                                        int index = foots.indexOf(str);
-                                        if(date.get(index).equals("")) {
-                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.question));
-                                        } else {
-                                            adapter.addItem(new SingerItem(str, date.get(index),R.drawable.paw));
-                                        }
+                                List<String> date = (List<String>)document.get("foot");
+                                for(String str:foots) {
+                                    int index = foots.indexOf(str);
+                                    if (date.get(index).equals("")) {
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.question));
+                                    } else {
+                                        adapter.addItem(new SingerItem(str, date.get(index), R.drawable.paw));
                                     }
                                 }
                             }
