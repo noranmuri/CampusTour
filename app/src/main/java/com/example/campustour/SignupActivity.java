@@ -23,6 +23,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class SignupActivity extends AppCompatActivity {
 
     private static final String TAG = "signupactivity";
@@ -37,7 +40,10 @@ public class SignupActivity extends AppCompatActivity {
     Button button;
     AlertDialog.Builder myAlertBuilder;
     AlertDialog error;
-    User user;
+//    User user;
+    HashMap<String, Object> newUser = new HashMap<>();
+    String[] mission = new String[10];
+    String[] foot = new String[10];
 
     public void onClickShowAlert(View view) {
         myAlertBuilder = new AlertDialog.Builder(SignupActivity.this);
@@ -136,13 +142,22 @@ public class SignupActivity extends AppCompatActivity {
                 if (!id.getText().toString().equals("") && !name.getText().toString().equals("") &&
                         !pw.getText().toString().equals("") && !pwcheck.getText().toString().equals("") &&
                         !phone.getText().toString().equals("")) {
-                    user = new User(name.getText().toString() ,
-                            id.getText().toString() ,pw.getText().toString(),
-                            pwcheck.getText().toString(), phone.getText().toString());
+                    newUser.put("name",name.getText().toString());
+                    newUser.put("id",id.getText().toString());
+                    newUser.put("pw",pw.getText().toString());
+                    newUser.put("phone",phone.getText().toString());
+                    newUser.put("level","1학년");
+                    newUser.put("coin",0);
+                    newUser.put("mission",new ArrayList<String>());
+                    newUser.put("foot",new ArrayList<String>());
+//                    user = new User(name.getText().toString() ,
+//                            id.getText().toString() ,pw.getText().toString(),
+//                            pwcheck.getText().toString(), phone.getText().toString());
                     // 빈칸이 없는 경우
+                    Toast.makeText(SignupActivity.this, "모든 항목 입력.", Toast.LENGTH_LONG).show();
                     if (pw.getText().toString().equals(pwcheck.getText().toString())) {
                         same.setText("비밀번호 일치");
-                        createUser(user);
+                        createUser(newUser);
                     } else {
                         same.setText("비밀번호 불일치");
                     }
@@ -155,8 +170,9 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    private void createUser(User data) {
-        Task<DocumentReference> documentReferenceTask = db.collection("users").add(data)
+    private void createUser(HashMap<String,Object> data) {
+//        Task<DocumentReference> documentReferenceTask =
+                db.collection("users").add(data)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -181,41 +197,44 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-    class User {
-        private String name;
-        private String id;
-        private String pw;
-        private String pwcheck;
-        private String phone;
-        private String level;
-        private int coin;
-
-        public User() {
-        }
-
-        public User(String name, String id, String pw, String pwcheck, String phone) {
-            this.name = name;
-            this.id = id;
-            this.pw = pw;
-            this.pwcheck = pwcheck;
-            this.phone = phone;
-            this.level = null;
-            this.coin = -1;
-        }
-
-        public String getName() {
-            return this.name;
-        }
-        public String getId() {
-            return this.id;
-        }
-        public String getPw() {
-            return this.pw;
-        }
-        public String getPhone() {
-            return this.phone;
-        }
-
-
-    }
+//    class User {
+//        private String name;
+//        private String id;
+//        private String pw;
+//        private String pwcheck;
+//        private String phone;
+//        private String level;
+//        private int coin;
+//
+//        public User() {
+//        }
+//
+//
+//
+//
+//        public User(String name, String id, String pw,String pwcheck, String phone) {
+//            this.name = name;
+//            this.id = id;
+//            this.pw = pw;
+//            this.pwcheck = pwcheck;
+//            this.phone = phone;
+//            this.level = "0학년";
+//            this.coin = -1;
+//        }
+//
+//        public String getName() {
+//            return this.name;
+//        }
+//        public String getId() {
+//            return this.id;
+//        }
+//        public String getPw() {
+//            return this.pw;
+//        }
+//        public String getPhone() {
+//            return this.phone;
+//        }
+//
+//
+//    }
 }

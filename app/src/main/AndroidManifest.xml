@@ -27,7 +27,7 @@
         <activity android:name=".SignupActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".FootBtnClickedActivity"/>
-        <activity android:name=".QuestBtnClickedActivity"/>
+        <activity android:name=".MissionListActivity"/>
         <activity android:name=".MyPageActivity"/>
         <activity android:name=".MissionActivity"/>
 
