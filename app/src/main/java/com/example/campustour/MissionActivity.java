@@ -156,9 +156,7 @@ public class MissionActivity extends AppCompatActivity implements
                                                 //기존 정보 가져오기
                                                 List<String> foot = (List<String>)document.get("foot");
                                                 List<String> mission = (List<String>)document.get("mission");
-                                                Long old_coin;
-                                                old_coin = document.getLong("coin");
-
+                                                int old_coin = (int)document.get("coin");
 
                                                 foot.add(m_id, date_format);
                                                 mission.add(m_id, date_format);
