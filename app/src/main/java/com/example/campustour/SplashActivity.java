@@ -33,11 +33,17 @@ public class SplashActivity extends AppCompatActivity {
             public void onAnimationRepeat(Animation animation) { }
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.splash_in_down, R.anim.splash_out_top);
-                finish();
-                overridePendingTransition(R.anim.splash_out_top, R.anim.splash_in_down);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+//                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 1500);
+
             }
         });
 
