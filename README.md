@@ -1,5 +1,12 @@
 # CampusTour, _내 손 안의 캠퍼스_
 
+## :rainbow: 팀원 소개
+
+[thingzoo](https://github.com/thing-zoo)  |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 정명주   
+[orange](https://github.com/seeun-320)    |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 이세은   
+[Yoon](https://github.com/noranmuri)      |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 황성윤   
+[galaxy](https://github.com/eunha812)     |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 김은하   
+
 ## :bulb: 주제
 :bus: 경북대학교 대구캠퍼스만을 위한 캠퍼스 투어앱 👩🏻‍🏫
 
@@ -75,10 +82,3 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 - 앱 사용시 동의 하에(위치추적) 학우들이 많이 다니는 길을 수집하여 투어를 만드는 알고리즘 제작 가능
 
 ✔시스템 구성도
-
-## :rainbow: Contributors
-
-[thingzoo](https://github.com/thing-zoo)  |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 정명주
-[orange](https://github.com/seeun-320)    |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 이세은
-[Yoon](https://github.com/noranmuri)      |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 황성윤
-[galaxy](https://github.com/eunha812)     |  19학번 컴퓨터학부 글로벌소프트웨어융합전공 김은하
