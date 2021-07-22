@@ -121,8 +121,6 @@ public class SignupActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private void createUser(User data) {
