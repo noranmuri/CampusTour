@@ -108,27 +108,27 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 ### 2. 데이터베이스
 
-- users
-    - name
-    - id
-    - pw
-    - phone
-    - level
-    - coin
-    - mission
-    - foot
+> users
+>> name
+>>id
+>>pw
+>>phone
+>>level
+>>coin
+>>mission
+>>foot
 
-- marker
-    - title
-    - location
+> marker
+>> title
+>> location
 
-- mission
-    - title
-    - marker
-    - location
+> mission
+>> title
+>> marker
+>> location
 
-- foot
-    - title
+> foot
+>> title
 
 ### 3. 페이지별 xml 및 Java 파일 내용 간단 설명
 
@@ -204,6 +204,6 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 - 미션 위치를 마커로 표시
 - 유클리디안 거리 공식에 따라 현재위치와 미션위치의 위경도 간 거리 구함
-- 거리가 0.0004이하일 경우, 미션 장소에 도달했다고 토스트 띄우고 인증
-- 거리가 0.0004이상 0.0009이하일 경우, 미션 장소에 다가가라고 토스트 띄우기
 - 거리가 0.0009이상일 경우, 미션 장소와 멀리 있다고 토스트 띄우기
+- 거리가 0.0004이상 0.0009이하일 경우, 미션 장소에 다가가라고 토스트 띄우기
+- 거리가 0.0004이하일 경우, 미션 장소에 도달했다고 토스트 띄우고 인증
