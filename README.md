@@ -15,6 +15,10 @@
 ## :bulb: 주제
 :bus: 경북대학교 대구캠퍼스만을 위한 캠퍼스 투어앱 👩🏻‍🏫
 
+## 🎥 시연영상
+
+https://youtu.be/YGFW8xDg0FA
+
 ## :pushpin: 개발목적
 1. 정보의 부족 및 산발적 존재
     - 학우들의 캠퍼스 정보 습득 가능한 통로 부족
@@ -91,7 +95,7 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 
 ## 🛠 기술 스택
-<img src = "https://user-images.githubusercontent.com/62596783/126719995-3f22b6e4-b88e-4418-be41-92b5e92a0b33.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720247-53fe1b1d-2fad-4635-9780-713223e986c2.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720432-6efb6523-3f8a-42c6-b520-06cbdbc59a71.png" width="150">   
+<img src = "https://user-images.githubusercontent.com/62596783/126719995-3f22b6e4-b88e-4418-be41-92b5e92a0b33.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720432-6efb6523-3f8a-42c6-b520-06cbdbc59a71.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720247-53fe1b1d-2fad-4635-9780-713223e986c2.png" width="150">   
 <img src = "https://user-images.githubusercontent.com/62596783/126720560-34053f70-b3f6-4ca7-9fcb-cf33a194bddf.png" width="150"> <img src = "https://user-images.githubusercontent.com/62596783/126720615-a25ca48f-e5ea-476c-a83a-84f83fb52185.png" width="150">
 
 
@@ -158,7 +162,7 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 3. 지도 페이지
 
-<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150">
+<img src = "https://user-images.githubusercontent.com/62883338/126678118-f4bab5e3-38ce-4976-86ad-0107c306473b.jpg" width="150">|
 <img src = "https://user-images.githubusercontent.com/62883338/126678095-32c1fc4a-9d08-4775-93a0-ed24a2b2eefc.jpg" width="150">
 
 - Google Map API를 이용해서 기본위치가 경북대인 지도를 띄움
@@ -180,7 +184,7 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 
 5. 미션 리스트 & 나의 발자취
 
-<img src = "https://user-images.githubusercontent.com/62596783/126723272-f51c6ef6-3d06-4143-8031-b898c03dee0f.png" width="150">
+<img src = "https://user-images.githubusercontent.com/62596783/126723272-f51c6ef6-3d06-4143-8031-b898c03dee0f.png" width="150">|
 <img src = "https://user-images.githubusercontent.com/62596783/126723303-62f3b0d6-2d58-4446-a1e9-f0bf659da815.png" width="150">
 
 - ScrollView에 ListView를 넣어서 스크롤을 내려 미션을 총 확인
@@ -192,9 +196,9 @@ TMI(Too Much Information)적 요소를 넣어 재미를 더함
 6. 미션 인증
 
 
-<img src = "https://user-images.githubusercontent.com/62596783/126717875-53c20211-fc1c-4282-8440-eab7a96601e3.png" width="150">
-<img src = "https://user-images.githubusercontent.com/62596783/126718049-f6e4d2cd-cedf-476d-bc7a-75a6baf409c1.png" width="150">   
-<img src = "https://user-images.githubusercontent.com/62596783/126718130-60182548-4a0a-48cc-bca6-5dccc0142d83.png" width="150">   
+<img src = "https://user-images.githubusercontent.com/62596783/126717875-53c20211-fc1c-4282-8440-eab7a96601e3.png" width="150">|
+<img src = "https://user-images.githubusercontent.com/62596783/126718049-f6e4d2cd-cedf-476d-bc7a-75a6baf409c1.png" width="150">|
+<img src = "https://user-images.githubusercontent.com/62596783/126718130-60182548-4a0a-48cc-bca6-5dccc0142d83.png" width="150">
 
 - 미션 위치를 마커로 표시
 - 유클리디안 거리 공식에 따라 현재위치와 미션위치의 위경도 간 거리 구함
